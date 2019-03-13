@@ -1,0 +1,26 @@
+module Click_HallCurrent5_adc
+
+include Click_HallCurrent5_types
+sub procedure hallcurrent5_adcInit() 
+sub procedure hallcurrent5_adcSetInputChannel() 
+sub function  hallcurrent5_adcRead() as uint32_t 
+
+implements
+
+sub procedure hallcurrent5_adcInit() 
+    ADC1_Init() 
+end sub
+
+sub procedure hallcurrent5_adcSetInputChannel() 
+    ADC1_Set_Input_Channel(0x01) 
+end sub
+
+sub function  hallcurrent5_adcRead() as uint32_t 
+dim
+    adcData as uint32_t 
+
+    adcData = ADC1_Read(1) 
+    result = adcData 
+end sub
+
+end.

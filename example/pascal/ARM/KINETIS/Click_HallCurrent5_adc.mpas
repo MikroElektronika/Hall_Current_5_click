@@ -1,0 +1,29 @@
+unit Click_HallCurrent5_adc;
+
+uses Click_HallCurrent5_types;
+
+procedure hallcurrent5_adcInit(); 
+procedure hallcurrent5_adcSetInputChannel(); 
+function  hallcurrent5_adcRead() :  uint32_t; 
+
+implementation
+
+procedure hallcurrent5_adcInit(); 
+begin
+    ADC0_Init(); 
+end;
+
+procedure hallcurrent5_adcSetInputChannel(); 
+begin
+    ADC0_Set_Input_Channel(_ADC_CHANNEL_12); 
+end;
+
+function  hallcurrent5_adcRead() :  uint32_t; 
+var
+    adcData : uint32_t; 
+begin
+    adcData := ADC0_Read(12); 
+    result := adcData; 
+end;
+
+end.

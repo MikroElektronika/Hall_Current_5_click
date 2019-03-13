@@ -1,0 +1,4 @@
+module Click_HallCurrent5_config
+
+include Click_HallCurrent5_types
+end.
